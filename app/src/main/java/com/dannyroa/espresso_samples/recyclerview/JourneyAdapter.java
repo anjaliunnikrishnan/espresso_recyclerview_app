@@ -28,7 +28,7 @@ public class JourneyAdapter extends RecyclerView.Adapter<JourneyAdapter.ViewHold
     @Override public JourneyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_item_team, parent, false);
+                .inflate(R.layout.learn_tv_subtopic, parent, false);
 
         JourneyAdapter.ViewHolder vh = new JourneyAdapter.ViewHolder(v);
 
@@ -51,8 +51,7 @@ public class JourneyAdapter extends RecyclerView.Adapter<JourneyAdapter.ViewHold
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvName = (TextView) itemView.findViewById(R.id.tvChapterName);
-            //btnFollow = (Button) itemView.findViewById(R.id.follow_button);
+            tvName = (TextView) itemView.findViewById(R.id.tvSubtopicName);
         }
 
 

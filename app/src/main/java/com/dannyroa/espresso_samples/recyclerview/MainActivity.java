@@ -12,15 +12,14 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    public RecyclerView rvTeamsHor, rvTeamsVer;
+    public RecyclerView rvTeamsVer;
     private List<Team> teams;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rvTeamsHor = (RecyclerView) findViewById(R.id.rvChapterList);
-        rvTeamsVer = (RecyclerView) findViewById(R.id.rvSubtopic);
+        rvTeamsVer = (RecyclerView) findViewById(R.id.rvChapterList);
 
         teams = new ArrayList<>();
         teams.add(new Team("USA"));
@@ -36,16 +35,12 @@ public class MainActivity extends ActionBarActivity {
         teams.add(new Team("Uruguay"));
         teams.add(new Team("Colombia"));
 
-        TeamAdapter adapter = new TeamAdapter(MainActivity.this, teams);
-        TeamAdapter adapter2 = new TeamAdapter(MainActivity.this, teams);
+        ChapterAdapter adapter = new ChapterAdapter(MainActivity.this, teams);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
 
-        rvTeamsHor.setLayoutManager(layoutManager);
-        rvTeamsHor.setAdapter(adapter);
-//        rvTeamsVer.setLayoutManager(layoutManager2);
-//        rvTeamsVer.setAdapter(adapter);
+        rvTeamsVer.setLayoutManager(layoutManager);
+        rvTeamsVer.setAdapter(adapter);
     }
 
     @Override public boolean onCreateOptionsMenu(Menu menu) {
