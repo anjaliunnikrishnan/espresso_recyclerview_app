@@ -13,12 +13,12 @@ import java.util.List;
 /**
  * Created by dannyroa on 5/8/15.
  */
-public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder>  {
+public class ChapterAdapter extends RecyclerView.Adapter<ChapterAdapter.ViewHolder>  {
 
     List<Team> items;
     Context context;
 
-    public TeamAdapter(Context context, List<Team> items) {
+    public ChapterAdapter(Context context, List<Team> items) {
         this.items = items;
         this.context = context;
     }
@@ -49,7 +49,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder>  {
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvName = (TextView) itemView.findViewById(R.id.name);
+            tvName = (TextView) itemView.findViewById(R.id.tvChapterName);
             //btnFollow = (Button) itemView.findViewById(R.id.follow_button);
         }
 
@@ -57,23 +57,6 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder>  {
         public void setTeam(final Team team) {
 
             tvName.setText(team.getName());
-
-//            if (team.isFollowing()) {
-//                btnFollow.setText(context.getString(R.string.following));
-//            } else {
-//                btnFollow.setText(context.getString(R.string.follow));
-//            }
-//
-//            btnFollow.setOnClickListener(new View.OnClickListener() {
-//                @Override public void onClick(View view) {
-//                    team.setIsFollowing(!team.isFollowing());
-//                    if (team.isFollowing()) {
-//                        btnFollow.setText(context.getString(R.string.following));
-//                    } else {
-//                        btnFollow.setText(context.getString(R.string.follow));
-//                    }
-//                }
-//            });
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View view) {

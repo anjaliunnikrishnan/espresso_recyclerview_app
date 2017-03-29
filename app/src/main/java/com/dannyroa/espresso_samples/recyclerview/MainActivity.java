@@ -12,16 +12,15 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    public RecyclerView rvTeams, rvTeams2, rvTeams3;
+    public RecyclerView rvTeamsHor, rvTeamsVer;
     private List<Team> teams;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rvTeams = (RecyclerView) findViewById(R.id.recycler_view);
-        rvTeams2 = (RecyclerView) findViewById(R.id.recycler_view2);
-     //   rvTeams3 = (RecyclerView) findViewById(R.id.recycler_view);
+        rvTeamsHor = (RecyclerView) findViewById(R.id.rvChapterList);
+        rvTeamsVer = (RecyclerView) findViewById(R.id.rvSubtopic);
 
         teams = new ArrayList<>();
         teams.add(new Team("USA"));
@@ -38,17 +37,15 @@ public class MainActivity extends ActionBarActivity {
         teams.add(new Team("Colombia"));
 
         TeamAdapter adapter = new TeamAdapter(MainActivity.this, teams);
-       // TeamAdapter adapter2 = new TeamAdapter(MainActivity.this, teams);
+        TeamAdapter adapter2 = new TeamAdapter(MainActivity.this, teams);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        RecyclerView.LayoutManager layoutManager3 = new LinearLayoutManager(this);
 
-    //    rvTeams3.setLayoutManager(layoutManager3);
-        rvTeams.setLayoutManager(layoutManager);
-    //    rvTeams.setAdapter(adapter);
-        rvTeams2.setLayoutManager(layoutManager2);
-        rvTeams2.setAdapter(adapter);
+        rvTeamsHor.setLayoutManager(layoutManager);
+        rvTeamsHor.setAdapter(adapter);
+//        rvTeamsVer.setLayoutManager(layoutManager2);
+//        rvTeamsVer.setAdapter(adapter);
     }
 
     @Override public boolean onCreateOptionsMenu(Menu menu) {
