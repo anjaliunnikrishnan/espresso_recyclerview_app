@@ -17,10 +17,10 @@ import java.util.List;
 
 public class JourneyAdapter extends RecyclerView.Adapter<JourneyAdapter.ViewHolder>  {
 
-    List<Team> items;
+    List<Sub_Team> items;
     Context context;
 
-    public JourneyAdapter(Context context, List<Team> items) {
+    public JourneyAdapter(Context context, List<Sub_Team> items) {
         this.items = items;
         this.context = context;
     }
@@ -36,8 +36,8 @@ public class JourneyAdapter extends RecyclerView.Adapter<JourneyAdapter.ViewHold
     }
 
     @Override public void onBindViewHolder(JourneyAdapter.ViewHolder holder, int position) {
-        Team team = items.get(position);
-        holder.setTeam(team);
+        Sub_Team sub_team = items.get(position);
+        holder.setTeam(sub_team);
     }
 
     @Override public int getItemCount() {
@@ -55,14 +55,14 @@ public class JourneyAdapter extends RecyclerView.Adapter<JourneyAdapter.ViewHold
         }
 
 
-        public void setTeam(final Team team) {
+        public void setTeam(final Sub_Team team) {
 
             tvName.setText(team.getName());
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View view) {
 
-                    ViewTeamActivity.launch((Activity) context, team);
+                    ViewTeamActivity.launch2((Activity)context, team);
                 }
             });
 

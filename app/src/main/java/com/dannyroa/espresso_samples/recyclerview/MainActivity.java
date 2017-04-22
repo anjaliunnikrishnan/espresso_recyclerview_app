@@ -19,7 +19,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rvTeamsVer = (RecyclerView) findViewById(R.id.rvChapterList);
+        rvTeamsVer = (RecyclerView) findViewById(R.id.rvTeam);
 
         teams = new ArrayList<>();
         teams.add(new Team("USA"));
@@ -37,7 +37,7 @@ public class MainActivity extends ActionBarActivity {
 
         ChapterAdapter adapter = new ChapterAdapter(MainActivity.this, teams);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
 
         rvTeamsVer.setLayoutManager(layoutManager);
         rvTeamsVer.setAdapter(adapter);
@@ -65,5 +65,10 @@ public class MainActivity extends ActionBarActivity {
 
     public List<Team> getTeams(){
         return teams;
+    }
+
+
+    public List<Sub_Team> getTeams2(){
+        return ChapterAdapter.sub_teams;
     }
 }

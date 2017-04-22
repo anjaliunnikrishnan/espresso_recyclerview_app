@@ -27,4 +27,11 @@ public class ViewTeamActivity extends ActionBarActivity {
         intent.putExtra(EXTRA_TEAM_NAME, team.getName());
         activity.startActivity(intent);
     }
+
+    public static void launch2(Activity activity, Sub_Team team) {
+
+        Intent intent = new Intent(activity, ViewTeamActivity.class);
+        intent.putExtra(EXTRA_TEAM_NAME, team.getName());
+        activity.startActivity(intent);
+    }
 }
